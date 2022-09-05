@@ -1,38 +1,223 @@
-.App {
-  text-align: center;
+.Footer {
+  display: grid;
+  grid-template-rows: 0.2fr 0.2fr 1fr 0.2fr;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 40px;
+  grid-template-areas:
+    "fTopLogo fTopLogo fTopSocialLogo"
+    "fSocialUpdates fSocialUpdates fSocialUpdates"
+    "C1 C2 C3"
+    "Love BottomLogo BottomLogo";
+  grid-gap: 10px;
+  background: rgb(27, 24, 24);
+  color: white;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fTopLogo {
+  grid-area: fTopLogo;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fTopSocialLogo {
+  grid-area: fTopSocialLogo;
+  display: flex;
+  /* padding-left: 50px; */
+  justify-content: space-between;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.fSocialUpdates {
+  grid-area: fSocialUpdates;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.f1,
+.f2 {
+  display: flex;
+  justify-content: flex-end;
+}
+/*   */
+
+.insta,
+.linkedin,
+.github,
+.facebook,
+.discord,
+.twitter {
+  width: 39px;
+  height: 48px;
+}
+
+.C1 {
+  grid-area: C1;
+  height: fit-content;
+  display: flex;
+  padding-top: 20px;
+}
+
+.C2 {
+  grid-area: C2;
+  height: fit-content;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.C3 {
+  grid-area: C3;
+  display: grid;
+  grid-template-rows: 0.2fr 0.3fr 0.2fr;
+  grid-template-areas:
+    "n1"
+    "Rules"
+    "n2";
+  height: fit-content;
+}
+
+.Card {
+  background-color: black;
+  display: flex;
+  padding: 10px;
+}
+
+.Cright {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.n1 {
+  grid-area: n1;
+}
+
+.n2 {
+  grid-area: n2;
+}
+
+.Rules {
+  grid-area: Rules;
+  justify-content: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.Rules p {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Love {
+  padding-top: 10px;
+  grid-area: Love;
+  display: flex;
+  /* align-self: flex-end;*/
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.BottomLogo {
+  padding-top: 10px;
+  grid-area: BottomLogo;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "Null Blogo Blogo";
+}
+
+.Null {
+  grid-area: Null;
+}
+
+.Blogo {
+  grid-area: Blogo;
+  display: flex;
+  justify-content: space-between;
+}
+
+a,
+p,
+.f1,
+.f2 {
+  color: grey;
+}
+
+@media only screen and (max-width: 650px) {
+  .fTopLogo {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Footer {
+    display: grid;
+    grid-template-rows: 0.2fr 0.3fr 2fr 2fr 1fr 0.5fr 0.3fr;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "fTopSocialLogo"
+      "fSocialUpdates"
+      "C1"
+      "C2"
+      "C3"
+      "Love"
+      "BottomLogo";
+    padding: 10px 20px 10px 20px;
+  }
+
+  .n1 {
+    display: none;
+  }
+
+  .n2 {
+    display: none;
+  }
+
+  .C1 {
+    padding-top: 20px;
+  }
+
+  .C2 {
+    padding-left: none;
+  }
+
+  .C3 {
+    grid-template-areas: "Rules";
+    grid-template-rows: 1fr;
+  }
+
+  .BottomLogo {
+    display: flex;
+  }
+
+  .Love {
+    padding-top: 10px;
+    grid-area: Love;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Rules {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    flex-grow: 0;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .BottomLogo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+
+  .Blogo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    flex-grow: 0;
+    justify-content: space-between;
+    gap: 15px;
   }
 }
